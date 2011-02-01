@@ -13,8 +13,9 @@ Sujets
 .. toctree::
    :maxdepth: 1
 
-   som_pictures.rst
-   speech_music_knn.rst
+   som_pictures
+   speech_music_knn
+   pics_bow
 
 Licence 
 -------
