@@ -1,0 +1,10 @@
+*.pyc
+*.so
+*~
+.#*
+*.swp
+build
+*.nt.bz2
+*.tar.gz
+*.tgz
+
