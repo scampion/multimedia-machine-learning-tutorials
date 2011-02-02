@@ -13,21 +13,20 @@ Sujets
 .. toctree::
    :maxdepth: 1
 
-   som_pictures
+   pics_som
    speech_music_knn
+   txt_bow
    pics_bow
+
+Sources
+-------
+
+Disponible sur GitHub :
+  http://github.com/scampion/Multimedia-Machine-Learning-Tutorials
 
 Licence 
 -------
 `Creative Commons Paternité 3.0 Unported License <http://creativecommons.org/licenses/by/3.0/>`_
 
 .. image:: http://i.creativecommons.org/l/by/3.0/88x31.png
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
