@@ -10,13 +10,41 @@ Machine learning et Multimedia
 Sujets 
 ------
 
+Textes :
+~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   txt_spam      
+   txt_bow
+
+Images : 
+~~~~~~~~
+
 .. toctree::
    :maxdepth: 1
 
    pics_som
-   speech_music_knn
-   txt_bow
    pics_bow
+
+Sons : 
+~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   speech_music_knn
+
+Vidéos : 
+~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   video_faces_recognition
+
+   
 
 Sources
 -------
