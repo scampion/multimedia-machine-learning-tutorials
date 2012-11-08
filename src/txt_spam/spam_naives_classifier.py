@@ -54,7 +54,7 @@ def pgauss(esp,var,x):
     """
     compute probability using gaussian function
     """
-    return 1 / (sqrt(var) * sqrt(2*pi)) * exp( -1 * (x - esp)**2 / (2 * var ))
+    return 1 / (sqrt(var) * sqrt(2*pi)) * exp( - 0.5 * (((x - esp) / var) **2 ))
 
 def is_spam(data,spams_stats,hams_stats):
     r = 0
