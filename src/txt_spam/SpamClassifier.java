@@ -7,10 +7,12 @@ import java.util.Scanner;
 public class SpamClassifier {
     public static final int NB_MAILS = 4601;
     public static final int NB_ATTRS = 58 ;
+
     public static void main( String [] args )
     {
 	try {
 	    float[][] matrix = loadData("spambase.data", NB_MAILS, NB_ATTRS);
+
 	    int nb_of_spams = 0;
 	    for(int i=0; i < NB_MAILS; i++){
 		if (matrix[i][57] == 1) {
@@ -18,6 +20,10 @@ public class SpamClassifier {
 		}		  
 	    }
 	    System.out.println(nb_of_spams + " spams loaded");
+
+	    Stats spams_stats = new Stats();
+	    spams_stats.learn(matrix, 50, 1);
+	    
 	}
 	catch(Exception e){
 	    e.printStackTrace();
@@ -44,5 +50,26 @@ public class SpamClassifier {
 	System.out.println("");
 	*/
 	return matrix;
+    }
+
+}
+
+class Stats {
+    int NB_ATTRS = 58 ;
+    float[] avg = new float[NB_ATTRS];
+    float[] std = new float[NB_ATTRS];
+    
+    public void learn(float[][] matrix, int size, int flag){
+	int count = 0 ;
+	for(int i = 0; (i < matrix.length && count < size); i++){
+	    if (matrix[i][57] == flag) {
+		for( int j = 0; j < 57; j++){
+		    this.avg[j] += matrix[i][j]; 
+		}
+	    }
+	}
+	for( int j = 0; j < 57; j++){
+	    this.avg[j] = this.avg[j] / size ;
+	}    
     }
 }

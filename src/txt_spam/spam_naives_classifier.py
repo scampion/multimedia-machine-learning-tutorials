@@ -28,27 +28,20 @@ data = np.loadtxt('spambase.data')
 spams = [ d for d in data if d[-1]==1]
 hams  = [ d for d in data if d[-1]==0]
 
-def learn(data,learn_size=50,nbattrs=58): 
+def learn(data, learn_size=50, nbattrs=58): 
     """
     learning function : 
     compute mean and standard deviation for each attributes
     :rtype : array of tuple (mean,std)
     """
     data = np.array(data)
-    sample = data#[0:learn_size]
+    sample = data[0:learn_size]
     attrs = np.hsplit(sample, nbattrs)
     return [ (np.mean(v), np.std(v)) for v in attrs[:-1] ]
 
 spams_stats = learn(spams)
 hams_stats  = learn(hams)
 
-
-# print 'spams stats'
-# for e,v in spams_stats:
-#     print e,v
-# print 'hams stats',hams_stats
-# for e,v in spams_stats:
-#     print e,v
 
 def pgauss(esp,var,x):
     """
@@ -81,10 +74,6 @@ def is_spam(data,spams_stats,hams_stats):
             return True 
         
     return r > 0 
-
-#Some individual test 
-#for i in [1000,2000,4000]:
-#    print 'mail nb:',i,is_spam(data[i],spams_stats,hams_stats)
 
 
 rh = rs = nb_spams_detected = 0 

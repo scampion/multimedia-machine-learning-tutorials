@@ -26,9 +26,12 @@ Chaque email est caractérisé par 58 attributs (57 continus, 1 label)
 
 Phase d'apprentisage
 --------------------
-On suppose que chaque attribut suit du corpus SpamBase suit une loi normale gaussienne : 
+On suppose que chaque attribut suit du corpus SpamBase suit une loi normale (également appelée de Gauss) : 
 :math:`p(x)\ =\ \frac{1}{\sigma \sqrt{2\pi}}\ \mathrm{e}^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}`
 
+.. figure:: _static/loi_normale.png
+   :alt: source Wikipédia
+source wikipedia 
 
 Pour chaque classe spam et ham, prendre **les 50 premiers emails** pour calculer l'espérance :math:`\mu` et la variance 
 
@@ -125,12 +128,12 @@ Nombre de mails utilisés pour l'apprentisage : **50**
 
 	--------------------------------------------------------------------------------
 	HAM
-	precision : 0.939812258421
-	recall : 0.610473457676
+	precision : 0.937360178971
+	recall : 0.75143472023
 	--------------------------------------------------------------------------------
 	SPAM
-	precision : 0.610752688172
-	recall : 0.939878654164
+	precision : 0.707100591716
+	recall : 0.92277992278
 
 
 Spam classifier
